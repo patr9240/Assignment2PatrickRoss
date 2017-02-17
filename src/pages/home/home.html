@@ -23,7 +23,7 @@
         <ion-label>
           {{i+1}}. {{listItem.item}}
         </ion-label>
-        <ion-checkbox color="positive" checked="false"></ion-checkbox>
+        <ion-checkbox color="positive" checked="false" (click)="switchComplete(listItem.$key, listItem.done)"></ion-checkbox>
       </ion-item>
       <!-- Options for item slide -->
       <ion-item-options>

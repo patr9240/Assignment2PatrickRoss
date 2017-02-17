@@ -45,34 +45,7 @@ export class HomePage {
   });
   prompt.present();
   }
-/*
-  showOptions(itemId, itemDescription) {
-    let actionSheet = this.actionSheetCtrl.create({
-      title: 'Item Options?',
-      buttons: [
-        {
-          text: 'Delete Item',
-          role: 'destructive',
-          handler: () => {
-            this.removeItem(itemId);
-          }
-        },{
-          text: 'Update Item',
-          handler: () => {
-            this.updateItem(itemId, itemDescription);
-          }
-        },{
-          text: 'Cancel',
-          role: 'cancel',
-          handler: () => {
-            console.log('Cancel clicked');
-          }
-        }
-      ]
-    });
-    actionSheet.present();
-  }
-*/
+
   removeItem(itemId: string){
     this.listItems.remove(itemId);
   }
@@ -107,11 +80,17 @@ export class HomePage {
     });
     prompt.present();
   }
-  editItem(){
 
+  switchComplete(itemId, itemCompletion){
+    if(itemCompletion == true){
+      this.listItems.update(itemId, {
+        done: false
+      });
+    }
+    if(itemCompletion == false){
+      this.listItems.update(itemId, {
+        done: true
+      });
+    }
   }
-  deleteItem() {
-
-  }
-
 }
