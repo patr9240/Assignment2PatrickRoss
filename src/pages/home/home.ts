@@ -26,25 +26,25 @@ export class HomePage {
       },
     ],
     buttons: [
-      {
-        text: 'Cancel',
-        handler: data => {
-          console.log('Cancel clicked');
-        }
-      },
-      {
-        text: 'Save',
-        handler: data => {
-          this.listItems.push({
-            item: data.item,
-            done: 0
-          });
-        }
-      }
-    ]
-  });
-  prompt.present();
-  }
+       {
+         text: 'Cancel',
+         handler: data => {
+           console.log('Cancel clicked');
+         }
+       },
+       {
+         text: 'Save',
+         handler: data => {
+           this.listItems.push({
+             item: data.item,
+             done: false
+           });
+         }
+       }
+     ]
+   });
+   prompt.present();
+   }
 
   removeItem(itemId: string){
     this.listItems.remove(itemId);
