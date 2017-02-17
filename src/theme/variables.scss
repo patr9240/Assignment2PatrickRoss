@@ -1,5 +1,10 @@
-// Ionic Variables and Theming. For more info, please see:
-// http://ionicframework.com/docs/v2/theming/
+/*  variables.scss
+    Created: February 16, 2017
+    Updated: February 17, 2017
+    The To-Do List!
+    Patrick Ross
+    200307049
+    This is the apps CSS styling sheet */
 $font-path: "../assets/fonts";
 
 @import "ionic.globals";
@@ -24,13 +29,6 @@ $font-path: "../assets/fonts";
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  /*
-  primary:    #387ef5,
-  secondary:  #32db64,
-  danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
-  */
   primary:    #2C3E50,
   secondary:  #2980B9,
   danger:     #E74C3C,

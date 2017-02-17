@@ -1,3 +1,10 @@
+/*  home.ts
+    Created: February 16, 2017
+    Updated: February 17, 2017
+    The To-Do List!
+    Patrick Ross
+    200307049
+    This is the logic for the to-do list app */
 import { Component } from '@angular/core';
 import { NavController, AlertController, ActionSheetController } from 'ionic-angular';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';

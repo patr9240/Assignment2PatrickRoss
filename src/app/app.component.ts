@@ -1,3 +1,11 @@
+/*  app.component.ts
+    Created: February 16, 2017
+    Updated: February 17, 2017
+    The To-Do List!
+    Patrick Ross
+    200307049
+    This is the component page for the to-do list app */
+
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';

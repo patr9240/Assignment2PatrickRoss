@@ -1,3 +1,11 @@
+/*  app.module.ts
+    Created: February 16, 2017
+    Created: February 17, 2017
+    The To-Do List!
+    Patrick Ross
+    200307049
+    This is the app module page for the to-do list */
+
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
