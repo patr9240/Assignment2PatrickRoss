@@ -1,0 +1,36 @@
+{
+    "todoList": [
+        {
+            "item": "Email Phoenix.",
+            "done": 0
+        },
+        {
+            "item": "Create game house.",
+            "done": 0
+        },
+        {
+            "item": "Write Spanish cultural report.",
+            "done": 1
+        },
+        {
+            "item": "Hand in Calculator application.",
+            "done": 1
+        },
+        {
+            "item": "Write forum post for Principles of Managment.",
+            "done": 0
+        },
+        {
+            "item": "Write report for Business Intelligence.",
+            "done": 1
+        },
+        {
+            "item": "Do the dishes.",
+            "done": 1
+        },
+        {
+            "item": "Take a walk in the nice weather.",
+            "done": 0
+        }
+    ]
+}
