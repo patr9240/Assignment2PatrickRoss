@@ -1,27 +1,31 @@
-<ion-header>
+<ion-header center text-center>
   <ion-navbar>
-    <ion-title>Just Do It!</ion-title>
+    <ion-title>The To-Do List!</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h1>To-Do List</h1>
-  <button ion-button (click)="addItem()">
+<ion-content center text-center>
+  <button ion-button round block (click)="addItem()">
     <ion-icon name="add"></ion-icon>
-    New
+    Add New Item
   </button>
-  <ion-list inset>
-    <ion-item-sliding *ngFor="let listItem of listItems | async" ><!--(click)="change "listItem.done" = 1 || 0, cross text out." -->
-      <ion-item>
-        <ion-row>
-          <ion-col>
-            {{listItem.item}}
-          </ion-col>
-          <ion-col>
-            {{listItem.done}}
-          </ion-col>
-        </ion-row>
+  <ion-list inset *ngFor="let listItem of listItems | async; let i = index;">
+    <ion-item-sliding (click)="switchComplete(listItem.$key, listItem.done)">
+      <!-- If item is completed, visually show completion -->
+      <ion-item text-wrap *ngIf="listItem.done === true">
+        <ion-label>
+          <s> {{i+1}}. {{listItem.item}} </s>
+        </ion-label>
+        <ion-checkbox color="positive" checked="true" disabled="true"></ion-checkbox>
       </ion-item>
+      <!-- If item is completed, visually show incompletion -->
+      <ion-item text-wrap *ngIf="listItem.done === false">
+        <ion-label>
+          {{i+1}}. {{listItem.item}}
+        </ion-label>
+        <ion-checkbox color="positive" checked="false"></ion-checkbox>
+      </ion-item>
+      <!-- Options for item slide -->
       <ion-item-options>
         <button ion-button color="primary" (click)="updateItem(listItem.$key, listItem.item)">
           <ion-icon name="build"></ion-icon>

@@ -1,0 +1,49 @@
+<ion-header center text-center>
+  <ion-navbar>
+    <ion-title>The To-Do List!</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content center text-center>
+  <button ion-button round block (click)="addItem()">
+    <ion-icon name="add"></ion-icon>
+    Add New Item
+  </button>
+  <ion-list inset>
+    <ion-item-sliding *ngFor="let listItem of listItems | async; let i = index;"><!--(click)="change "listItem.done" = 1 || 0, cross text out." -->
+      <ion-item text-wrap>
+        <!--
+            <ion-label>
+              <s ng-if="listItem.done"> {{i+1}}. {{listItem.item}} </s>
+            </ion-label>
+            <ion-checkbox color="positive" checked="true"></ion-checkbox>
+
+
+            <ion-label>
+              {{i+1}}. {{listItem.item}}
+            </ion-label>
+            <ion-checkbox color="positive" checked="false"></ion-checkbox>
+-->
+    <span ng-if="listItem.done">
+          <ion-label>
+            <s> {{i+1}}. {{listItem.item}} </s>
+          </ion-label>
+    </span>
+    <span ng-if="!listItem.done">
+          <ion-label>
+            {{i+1}}. {{listItem.item}}
+          </ion-label>
+    </span>
+
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="primary" (click)="updateItem(listItem.$key, listItem.item)">
+          <ion-icon name="build"></ion-icon>
+          Edit</button>
+        <button ion-button color="danger" (click)="removeItem(listItem.$key)">
+          <ion-icon name="trash"></ion-icon>
+          Delete</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

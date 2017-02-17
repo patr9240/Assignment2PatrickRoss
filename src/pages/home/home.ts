@@ -7,7 +7,6 @@ import {AngularFire, FirebaseListObservable} from 'angularfire2';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
   listItems: FirebaseListObservable<any>;
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController, 
@@ -16,7 +15,7 @@ export class HomePage {
   }
 
   //methods
-  addItem(){
+  addItem(){    
     let prompt = this.alertCtrl.create({
     title: 'To-Do List Item',
     message: "Add a new item to your To-Do List.",
@@ -27,15 +26,6 @@ export class HomePage {
       },
     ],
     buttons: [
-      {
-        text: 'Save',
-        handler: data => {
-          this.listItems.push({
-            item: data.item,
-            done: 0
-          });
-        }
-      },
       {
         text: 'Cancel',
         handler: data => {
