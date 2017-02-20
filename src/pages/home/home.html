@@ -11,6 +11,7 @@
   </ion-navbar>
 </ion-header>
 <ion-content center text-center>
+  <!-- Add item button -->
   <button ion-button round block (click)="addItem()">
     <ion-icon name="add"></ion-icon>
     Add New Item
@@ -26,7 +27,7 @@
         <ion-checkbox color="positive" checked="true" disabled="true"></ion-checkbox>
       </ion-item>
 
-      <!-- If item is completed, check bos and cross line through text -->
+      <!-- If item is completed, check box and cross line through text -->
       <ion-item text-wrap *ngIf="listItem.done === false">
         <ion-label>
           {{i+1}}. {{listItem.item}}

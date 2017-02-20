@@ -14,6 +14,7 @@ import {AngularFire, FirebaseListObservable} from 'angularfire2';
   templateUrl: 'home.html'
 })
 export class HomePage {
+  
   listItems: FirebaseListObservable<any>;
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController, 
@@ -21,7 +22,9 @@ export class HomePage {
     this.listItems = af.database.list('/todoList');
   }
 
-  //methods
+  /*addItem
+    This method activates a popup for the user 
+    to create a new item in the to-do list*/
   addItem(){    
     let prompt = this.alertCtrl.create({
     title: 'To-Do List Item',
@@ -52,11 +55,14 @@ export class HomePage {
    });
    prompt.present();
    }
-
+  /*removeItem
+    This method removes the selected item from the to-do list*/
   removeItem(itemId: string){
     this.listItems.remove(itemId);
   }
-
+  /*updateItem
+    This method activates a popup for the user
+    to edit the details of a to-do list item*/
   updateItem(itemId, itemDescription){
     let prompt = this.alertCtrl.create({
       title: 'Item Description',
@@ -87,7 +93,8 @@ export class HomePage {
     });
     prompt.present();
   }
-
+  /*This method switches a to-do list item from complete 
+    to incomplete or from incomplete to complete.*/
   switchComplete(itemId, itemCompletion){
     if(itemCompletion == true){
       this.listItems.update(itemId, {
